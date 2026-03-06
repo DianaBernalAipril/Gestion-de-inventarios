@@ -1,0 +1,6 @@
+Esta carpeta contiene los pipelines ETL para transformación de datos.
+
+raw_to_bronze.py: Normalización Raw → Bronze.
+bronze_to_silver.py: Curación Bronze → Silver (con validaciones).
+silver_to_gold.py: Agregaciones Silver → Gold.
+gold_to_postgres.py: Carga Gold → Postgres.

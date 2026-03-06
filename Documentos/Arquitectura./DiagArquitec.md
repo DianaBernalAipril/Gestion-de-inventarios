@@ -1,4 +1,4 @@
-### Diagrama de Contexto
+### Diagrama de Arquitectura
 ```mermaid
 architecture-beta
     group control_plane(logos:supabase) [Plano de Control]

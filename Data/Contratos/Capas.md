@@ -19,23 +19,27 @@ Las fuentes incluyen:
 - Sistema POS de farmacias
 - Transferencias internas entre ubicaciones
 3. Tabla: bronze_inventory_events
-event_id | string | Identificador único del evento
-tenant_id | string | Identificador opcional del tenant
-ingestion_timestamp | timestamp | Momento en que el evento entra a la plataforma
-event_type | string | Tipo de evento (RECEIPT, DISPATCH, SALE, TRANSFER)
-product_id | string | Identificador del medicamento
-product_name | string | Nombre del medicamento desde el sistema origen
-quantity | int | Cantidad involucrada en el evento
-unit | string | Unidad de medida (caja, frasco, tableta)
-source_location_id | string | Ubicación que envía inventario
-destination_location_id | string | Ubicación que recibe inventario
-pharmacy_brand | string | Marca de farmacia
-store_id | string | Identificador del punto de venta
-batch_number | string | Número de lote del medicamento
-expiration_date | date | Fecha de vencimiento
-event_timestamp | timestamp | Momento en que ocurrió el evento
-day | date | Columna de partición
-run_id | string | Identificador de ejecución del pipeline de ingesta
+### 3. Tabla: bronze_inventory_events
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **event_id** | string | Identificador único del evento |
+| **tenant_id** | string | Identificador opcional del tenant |
+| **ingestion_timestamp** | timestamp | Momento en que el evento entra a la plataforma |
+| **event_type** | string | Tipo de evento (RECEIPT, DISPATCH, SALE, TRANSFER) |
+| **product_id** | string | Identificador del medicamento |
+| **product_name** | string | Nombre del medicamento desde el sistema origen |
+| **quantity** | int | Cantidad involucrada en el evento |
+| **unit** | string | Unidad de medida (caja, frasco, tableta) |
+| **source_location_id** | string | Ubicación que envía inventario |
+| **destination_location_id** | string | Ubicación que recibe inventario |
+| **pharmacy_brand** | string | Marca de farmacia |
+| **store_id** | string | Identificador del punto de venta |
+| **batch_number** | string | Número de lote del medicamento |
+| **expiration_date** | date | Fecha de vencimiento |
+| **event_timestamp** | timestamp | Momento en que ocurrió el evento |
+| **day** | date | Columna de partición |
+| **run_id** | string | Identificador de ejecución del pipeline de ingesta |
 4. Reglas de Transformación
 Los nombres de productos se normalizan a MAYÚSCULAS.
 
@@ -81,18 +85,21 @@ Fuentes:
 - bronze_products
 - bronze_locations
 3. Tabla: silver_inventory_movements
-movement_id | string | Identificador único del movimiento
-product_id | string | Identificador del medicamento
-product_name | string | Nombre estandarizado del medicamento
-location_id | string | Ubicación (bodega o farmacia)
-brand | string | Marca de farmacia
-store_id | string | Identificador del punto de venta
-batch_number | string | Número de lote
-expiration_date | date | Fecha de vencimiento
-movement_type | string | RECEIPT, DISPATCH, SALE, TRANSFER
-quantity | int | Cantidad del movimiento
-event_timestamp | timestamp | Timestamp del evento
-validated | boolean | Indicador de validación de calidad de datos
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **movement_id** | string | Identificador único del movimiento |
+| **product_id** | string | Identificador del medicamento |
+| **product_name** | string | Nombre estandarizado del medicamento |
+| **location_id** | string | Ubicación (bodega o farmacia) |
+| **brand** | string | Marca de farmacia |
+| **store_id** | string | Identificador del punto de venta |
+| **batch_number** | string | Número de lote |
+| **expiration_date** | date | Fecha de vencimiento |
+| **movement_type** | string | RECEIPT, DISPATCH, SALE, TRANSFER |
+| **quantity** | int | Cantidad del movimiento |
+| **event_timestamp** | timestamp | Timestamp del evento |
+| **validated** | boolean | Indicador de validación de calidad de datos |
+
 4. Reglas de Transformación
 Se eliminan eventos duplicados.
 
@@ -122,14 +129,17 @@ Formato de salida: Parquet o tablas analíticas
 Fuente principal:
 - silver_inventory_movements
 3. Tabla: gold_inventory_balance
-product_id | string | Identificador del medicamento
-product_name | string | Nombre del medicamento
-location_id | string | Ubicación (bodega o farmacia)
-brand | string | Marca de farmacia
-store_id | string | Identificador del punto de venta
-current_stock | int | Inventario disponible actual
-reserved_stock | int | Inventario reservado
-expiration_nearest | date | Fecha de vencimiento más cercana
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| **product_id** | string | Identificador del medicamento |
+| **product_name** | string | Nombre del medicamento |
+| **location_id** | string | Ubicación (bodega o farmacia) |
+| **brand** | string | Marca de farmacia |
+| **store_id** | string | Identificador del punto de venta |
+| **current_stock** | int | Inventario disponible actual |
+| **reserved_stock** | int | Inventario reservado |
+| **expiration_nearest** | date | Fecha de vencimiento más cercana |
 4. Lógica de Negocio
 El inventario se calcula mediante:
 

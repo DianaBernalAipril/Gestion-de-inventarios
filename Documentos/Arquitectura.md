@@ -1,3 +1,6 @@
+### Diagrama de Contexto
+```mermaid
+
 graph TD
     User((Operador Logístico))
     

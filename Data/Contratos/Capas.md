@@ -85,6 +85,7 @@ Fuentes:
 - bronze_products
 - bronze_locations
 3. Tabla: silver_inventory_movements
+  
 | Column | Type | Description |
 | :--- | :--- | :--- |
 | **movement_id** | string | Identificador único del movimiento |

@@ -1,5 +1,5 @@
-Especificación del Data Lake de Inventarios Farmacéuticos
-CAPA BRONZE — Especificación del Dataset de Movimientos de Inventario
+# Especificación del Data Lake de Inventarios Farmacéuticos
+# CAPA BRONZE — Especificación del Dataset de Movimientos de Inventario
 1. Propósito
 La capa Bronze representa la transformación estructurada y tipada de los eventos RAW de inventario provenientes de la bodega y de los puntos de venta de las farmacias.
 

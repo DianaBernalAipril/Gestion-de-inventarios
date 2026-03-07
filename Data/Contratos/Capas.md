@@ -70,7 +70,7 @@ No se realizan cálculos de inventario.
 
 Los datos deben ser reproducibles y trazables.
  
-CAPA SILVER — Especificación del Dataset de Inventario Limpio
+# CAPA SILVER — Especificación del Dataset de Inventario Limpio
 1. Propósito
 La capa Silver representa datos de inventario limpios, validados e integrados.
 
@@ -119,7 +119,7 @@ Se garantiza consistencia de identificadores entre sistemas.
 
 Los datasets quedan preparados para cálculos de inventario.
  
-CAPA GOLD — Especificación del Dataset de Inventario de Negocio
+# CAPA GOLD — Especificación del Dataset de Inventario de Negocio
 1. Propósito
 La capa Gold proporciona datasets listos para negocio,
 utilizados para analítica, dashboards, monitoreo y toma de decisiones operativas.

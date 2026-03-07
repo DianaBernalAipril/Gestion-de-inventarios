@@ -15,9 +15,9 @@ Entrada: RAW-InventoryEvents.schema.json
 Formato de salida: Parquet
 
 Las fuentes incluyen:
-- Sistema de recepción de bodega
-- Sistema de despacho de bodega
-- Sistema POS de farmacias
+- Innformación de recepción de bodega
+- Información de despacho de bodega
+- Transacciones de farmacias
 - Transferencias internas entre ubicaciones
 3. Tabla: bronze_inventory_events
 ### 3. Tabla: bronze_inventory_events

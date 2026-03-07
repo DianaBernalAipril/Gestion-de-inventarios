@@ -7,6 +7,7 @@ No se aplica lógica de negocio.
 No se realizan agregaciones ni cálculos de inventario.
 
 Solo se permiten transformaciones determinísticas y normalización de esquema.
+
 2. Fuente
 Entrada: RAW-InventoryEvents.schema.json
 (Eventos generados por operaciones de bodega y puntos de venta de farmacias)

@@ -15,7 +15,7 @@ Entrada: RAW-InventoryEvents.schema.json
 Formato de salida: Parquet
 
 Las fuentes incluyen:
-- Innformación de recepción de bodega
+- Información de recepción de bodega
 - Información de despacho de bodega
 - Transacciones de farmacias
 - Transferencias internas entre ubicaciones
